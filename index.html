@@ -1,0 +1,49 @@
+<meta charset="UTF-8">
+<link rel="stylesheet" href="styles.css">
+
+<h1 class="titulo">Encriptador</h1>
+
+    <input id="input-texto" class="form" type="text" placeholder="Ingrese Texto">
+    <p></p>
+    <button id="btn-encriptar" >Encriptar</button>   
+    <p></p>
+    <button id="btn-desencriptar">Desencriptar</button>
+    <p></p>
+    <input id="input-resultado"  class="form" type="text" placeholder="Texto Encriptado/Desencriptado">
+    <p></p>
+    <button id="btn-copiar">Copiar</button>
+    <p></p>
+    <button id="btn-limpiar">Limpiar</button>
+
+<script>
+
+var BtnEncriptar = document.getElementById("btn-encriptar").addEventListener("click",encriptar);
+var BtnDesencriptar = document.getElementById("btn-desencriptar").addEventListener("click",desencriptar);
+var BtnCopiar =document.getElementById("btn-copiar").addEventListener("click", copiar);
+var BtnLimpiar =document.getElementById("btn-limpiar").addEventListener("click", limpiar);
+
+
+
+function encriptar() {
+        var palabra =document.getElementById("input-texto").value.toLowerCase();
+        var palabraCodificada = palabra.replace(/e/g,'enter').replace(/i/g,'imes').replace(/a/g,'ai').replace(/o/g,'ober').replace(/u/g,'ufat');
+        document.getElementById("input-resultado").value=palabraCodificada
+    }
+
+function desencriptar() {
+    var palabraEncriptada = document.getElementById("input-texto").value.toLowerCase();
+    var palabraDecodificada = palabraEncriptada.replace (/enter/g,'e').replace(/imes/g,'i').replace(/ai/g,'a').replace(/ober/g,'o').replace(/ufat/g,'u');
+    document.getElementById("input-resultado").value= palabraDecodificada
+}
+function copiar(){
+    var resultado = document.getElementById("input-resultado").select();
+    alert("copiado");
+}   
+
+function limpiar(){
+    var limpiar = document.getElementById("input-texto").value ="";
+    var limpiar = document.getElementById("input-resultado").value ="";
+    
+}
+
+</script>
